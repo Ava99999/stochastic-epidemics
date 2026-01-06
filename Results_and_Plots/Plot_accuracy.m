@@ -21,7 +21,8 @@ err_rel_threshold = 0.05;
 
 % Timeseries plot:
 k_pop = 1;
-delta_k = 100;
+%delta_k = 100; % corresponds with delta = 0.28
+delta_k = 105;
 plot_SI_timeseries(delta_k, k_pop);
 
 end
@@ -310,6 +311,7 @@ function plot_SI_timeseries(deltat_k, k_pop)
     I_ap_q = squeeze(q_I_apprx(:,:,deltat_k));
 
     figure; hold on
+    set(gcf, 'Position', get(0, 'Screensize'));
     ax = gca;
     ax.FontSize = 14;      
     ax.LabelFontSizeMultiplier = 1.1;
@@ -357,6 +359,8 @@ fill([t(idx); flipud(t(idx))], ...
     legend('Location','best');
     lgd.FontSize = 14;
 
+    %title(sprintf('$\\delta = \\Delta t = %.2f$', delta_t(deltat_k)), ...
+     % 'FontSize', 18);
     title(sprintf('$\\delta = \\Delta t = %.2f$', delta_t(deltat_k)), ...
       'FontSize', 18);
     grid on
