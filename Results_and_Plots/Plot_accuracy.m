@@ -278,8 +278,6 @@ function plot_SI_timeseries(deltat_k, k_pop)
     delta_t = 0.0000937 * 1.084.^(0:130); 
     t_max = 15;                 % final time is 20
     idx = t <= t_max;
-
-
     
     GS_S = S_apprx(:,:,1);
     GS_I = I_apprx(:,:,1);
@@ -317,12 +315,7 @@ function plot_SI_timeseries(deltat_k, k_pop)
     ax.LabelFontSizeMultiplier = 1.1;
     ax.TitleFontSizeMultiplier = 1.2;
 
-
-% Exact algorithm bands
-%fill([t; flipud(t)], ...
- %    [S_ex_q(1,:)'; flipud(S_ex_q(2,:)')], ...
- %    'b', 'FaceAlpha', 0.15, 'EdgeColor', 'none');
-
+% exact algorithm bounds
 fill([t(idx); flipud(t(idx))], ...
      [S_ex_q(1,idx)'; flipud(S_ex_q(2,idx)')], ..., 
      'b', 'FaceAlpha', 0.15, 'EdgeColor', 'none', 'HandleVisibility','off');
@@ -332,7 +325,7 @@ fill([t(idx); flipud(t(idx))], ...
      [I_ex_q(1,idx)'; flipud(I_ex_q(2,idx)')], ...
      'r', 'FaceAlpha', 0.15, 'EdgeColor', 'none', 'HandleVisibility','off');
 
-% Approximate algorithm bands
+% approximate algorithm bands
 fill([t(idx); flipud(t(idx))], ...
      [S_ap_q(1,idx)'; flipud(S_ap_q(2,idx)')], ...
      'g', 'FaceAlpha', 0.15, 'EdgeColor', 'none', 'HandleVisibility','off');
@@ -359,8 +352,6 @@ fill([t(idx); flipud(t(idx))], ...
     legend('Location','best');
     lgd.FontSize = 14;
 
-    %title(sprintf('$\\delta = \\Delta t = %.2f$', delta_t(deltat_k)), ...
-     % 'FontSize', 18);
     title(sprintf('$\\delta = \\Delta t = %.2f$', delta_t(deltat_k)), ...
       'FontSize', 18);
     grid on
