@@ -9,4 +9,4 @@ https://doi.org/10.48550/arXiv.2406.05058
 
 The original repository can be accessed through https://github.com/YuanYIN99/Accurate-stochastic-simulation-algorithm-for-multiscale-models-of-infectious-diseases. 
 
-The sole differences within this repository are the added code to reproduce Figure 6 of the manuscript, for which the code can be found in the 'Plot_accuracy.m' file, and First Reaction Method simulations in the folder 'SI model simulations', so we stress that everything else is not our work. 
+The sole differences within this repository are the added code to reproduce Figure 6 of the manuscript, for which the code can be found in the 'Plot_accuracy.m' file, the First Reaction Method simulations in the folder 'SI model simulations' and the small addition of code in the 'WH-figure.m' file to reproduce figure 2(b), so we stress that everything else is not our work. 
